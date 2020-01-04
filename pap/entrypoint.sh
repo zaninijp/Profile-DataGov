@@ -3,11 +3,6 @@
 # Ping Identity DevOps - Docker Build Hooks
 #
 
- if test "${1}" = "start-server" ; then
-    ${PF_HOST:=localhost}
-    ${PF_PORT:=9031}
-    ${PF_CLIENT_ID:=dadmin}
-
     echo "
 ##################################################################################
 #               CPrice - PingDataGov - PAP installer
@@ -15,11 +10,8 @@
 # 
 #     Configured with the following values.  
 # 
-#       PF_HOST: ${PF_HOST}
-#       PF_PORT: ${PF_PORT}
-#       PF_CLIENT_ID: ${PF_CLIENT_ID}
-#       PD_HOST: ${PF_HOST}
-#       PD_PORT: ${PF_PORT}
+#       PAP_HOST: ${PF_HOST}
+#       PAP_PORT: ${PF_PORT}
 # 
 #     To set via a docker run or .yaml just set them using examples below
 #
@@ -40,10 +32,6 @@
 
     cd /opt/pap/PingDataGovernance-PAP || echo "Unable to cd to the PAP bin directory"
 
-    bin/setup demo --licenseKeyFile /opt/pap/PingDataGovernance-PAP/PingDataGovernance.lic --generateSelfSignedCertificate --certNickname server-cert --pkcs12KeyStorePath config/keystore.p12 --hostname int-docker.cpricelab.com --port 9443
+    bin/setup demo --licenseKeyFile /opt/pap/PingDataGovernance-PAP/PingDataGovernance.lic --generateSelfSignedCertificate --certNickname server-cert --pkcs12KeyStorePath config/keystore.p12 --hostname ${PAP_HOST} --port ${PAP_PORT}
 
-    bin/start-server 
-
- else
-     exec "$@"
- fi
+java -Xmx1G -XX:+UseG1GC -Dsymphonic.Database.H2.Path=/opt/pap/PingDataGovernance-PAP/admin-point-application/db/ -classpath /opt/pap/PingDataGovernance-PAP/admin-point-application/lib/*:/opt/pap/PingDataGovernance-PAP/admin-point-application/bin/* com.symphonicsoft.adminpoint.AdministrationPointApplication server /opt/pap/PingDataGovernance-PAP/config/configuration.yml

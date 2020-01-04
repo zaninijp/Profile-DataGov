@@ -5,5 +5,6 @@ COPY entrypoint.sh /
 
 RUN chmod +x /entrypoint.sh
 
-ENTRYPOINT [ "/entrypoint.sh","start-server" ]
-CMD ["start-server"]
+ENV 
+
+ENTRYPOINT [ "/entrypoint.sh" ]
