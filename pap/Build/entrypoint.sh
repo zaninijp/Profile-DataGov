@@ -31,7 +31,7 @@
 
     cd /opt/pap/PingDataGovernance-PAP || echo "Unable to cd to the PAP bin directory"
 
-    bin/setup demo --licenseKeyFile /opt/pap/PingDataGovernance-PAP/PingDataGovernance.lic --generateSelfSignedCertificate --certNickname server-cert --pkcs12KeyStorePath config/keystore.p12 --hostname ${PAP_HOST} --port 9443
+    bin/setup demo --licenseKeyFile /opt/pap/PingDataGovernance-PAP/PingDataGovernance.lic --generateSelfSignedCertificate --certNickname server-cert --pkcs12KeyStorePath config/keystore.p12 --hostname ${PAP_HOST} --port 9443 --decisionPointSharedSecret ${PAP_SECRET}
 
     echo "#################################"
     grep "Authentication.SharedSecret:" /opt/pap/PingDataGovernance-PAP/config/configuration.yml

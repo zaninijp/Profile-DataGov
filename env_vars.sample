@@ -19,3 +19,4 @@ USER_BASE_DN=dc=example.com
 
 # PAP Variables
 PAP_HOST=int-docker.cpricelab.com
+PAP_SECRET=2FederateM0re

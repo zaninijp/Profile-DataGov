@@ -1,0 +1,13 @@
+dsconfig create-external-server \
+    --server-name PAP  \
+    --type policy  \
+    --set base-url:https://pingdatagov-pap:9443  \
+    --set hostname-verification-method:allow-all  \
+    --set shared-secret:${PAP_SECRET}
+
+dsconfig set-policy-decision-service-prop \
+    --set pdp-mode:external  \
+    --set policy-server:PAP  \
+    --set decision-response-view:decision-tree  \
+    --set decision-response-view:evaluated-entities  \
+    --set decision-response-view:request 
