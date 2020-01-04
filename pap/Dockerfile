@@ -5,6 +5,6 @@ COPY entrypoint.sh /
 
 RUN chmod +x /entrypoint.sh
 
-ENV 
+EXPOSE 9443
 
 ENTRYPOINT [ "/entrypoint.sh" ]
