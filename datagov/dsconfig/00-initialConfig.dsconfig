@@ -31,13 +31,13 @@ dsconfig set-connection-handler-prop \
 # Status:Configuring Store Adapters
 #
 
-# dsconfig set-store-adapter-prop \
-#    --adapter-name UserStoreAdapter \
-#    --set enabled:true \
-#    --set structural-ldap-objectclass:inetOrgPerson \
-#    --set include-base-dn:ou=people,${USER_BASE_DN} \
-#   --set create-dn-pattern:entryUUID=server-generated,ou=people,${USER_BASE_DN} \
-#    --set load-balancing-algorithm:user-store-lba
+ dsconfig set-store-adapter-prop \
+    --adapter-name UserStoreAdapter \
+    --set enabled:true \
+    --set structural-ldap-objectclass:inetOrgPerson \
+    --set include-base-dn:ou=people,${USER_BASE_DN} \
+   --set create-dn-pattern:entryUUID=server-generated,ou=people,${USER_BASE_DN} \
+    --set load-balancing-algorithm:user-store-lba
 
 
 #
@@ -52,9 +52,9 @@ dsconfig set-connection-handler-prop \
 # pass-through schema option is selected.
 #
 
-# dsconfig create-scim-resource-type \
-#    --type-name Users --type pass-through \
-#    --set enabled:true \
-#    --set endpoint:Users \
-#    --set primary-store-adapter:UserStoreAdapter \
-#    --set id-attribute:entryUUID
+ dsconfig create-scim-resource-type \
+    --type-name Users --type pass-through \
+    --set enabled:true \
+    --set endpoint:Users \
+    --set primary-store-adapter:UserStoreAdapter \
+    --set id-attribute:entryUUID
