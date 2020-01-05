@@ -6,7 +6,7 @@ dsconfig create-external-server \
     --set "trust-manager-provider:Blind Trust"  \
     --set user-id:admin \
     --set shared-secret:${PAP_SECRET} \
-    --set "branch:Default Policies" 
+    --set "branch:Default Policies" \
     --set decision-node:e51688ff-1dc9-4b6c-bb36-8af64d02e9d1
 
 dsconfig set-policy-decision-service-prop \
