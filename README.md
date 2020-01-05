@@ -4,6 +4,8 @@ It is designed to be used in conjunction with:
 * PD-Base Profile (https://github.com/cprice-ping/PD-Base)
 * PF-Base Profile (https://github.com/cprice-ping/PF-Base)
 
+(This is because the DG Access Token Validator is configured for a `PingIntrospect` OAuth client)
+
 ## Deployment
 * Copy the `docker-compose.yaml` and `env_vars` files to a folder
 * Modify the `env_vars` file to match your environment
