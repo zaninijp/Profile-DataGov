@@ -1,11 +1,11 @@
 FROM openjdk:8-jre
 
-COPY PingDataGovernance-PAP-8.0.0.0.zip /
-COPY entrypoint.sh /
-COPY gatewayPolicyExample.SNAPSHOT /
+COPY [ "entrypoint.sh", "/opt/pap/" ]
+COPY [ "PingDataGovernance-PAP-8.0.0.0.zip", "/opt/pap/" ]
+# COPY [ "gatewayPolicyExample.SNAPSHOT", "/opt/pap" ]
 
-RUN chmod +x /entrypoint.sh
+RUN chmod +x /opt/pap/entrypoint.sh
 
 EXPOSE 9443
 
-ENTRYPOINT [ "/entrypoint.sh" ]
+ENTRYPOINT [ "/opt/pap/entrypoint.sh" ]

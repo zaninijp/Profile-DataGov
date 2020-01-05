@@ -20,19 +20,13 @@
 #           --env PAP_HOST=myhost.mydomain.com
 #           ...
 #
-#      To use with '.yaml' file (use snippet below)
-#
-#    pingdirectory:
-#       environment: PF_HOST=myhost.mydomain.com
 ##################################################################################
 "
-    mv /PingDataGovernance-PAP-8.0.0.0.zip /opt/pap
+
     cd /opt/pap
     unzip PingDataGovernance-PAP-8.0.0.0.zip
 
     cd /opt/pap/PingDataGovernance-PAP || echo "Unable to cd to the PAP bin directory"
-
-    mv /gatewayPolicyExample.SNAPSHOT .
 
     echo "
 ######################
@@ -48,9 +42,3 @@ Running Command: bin/setup demo --licenseKeyFile /opt/pap/PingDataGovernance-PAP
     "
 
     java -Xmx1G -XX:+UseG1GC -Dsymphonic.Database.H2.Path=/opt/pap/PingDataGovernance-PAP/admin-point-application/db/ -classpath /opt/pap/PingDataGovernance-PAP/admin-point-application/lib/*:/opt/pap/PingDataGovernance-PAP/admin-point-application/bin/* com.symphonicsoft.adminpoint.AdministrationPointApplication server /opt/pap/PingDataGovernance-PAP/config/configuration.yml
-
-# Import Default Policies -- https://docs.pingidentity.com/bundle/pingdatagovernance-80/page/nzw1564011507937.html
-curl -k -X POST "https://localhost:9443/api/snapshot/Default%20Policies/import" -H  "accept: application/json" -H  "x-user-id: admin" -H  "Content-Type: application/json" -d "@gatewayPolicyExample.SNAPSHOT"
-
-# Cleanup
-rm /opt/pap/PingDataGovernance-PAP-8.0.0.0.zip
