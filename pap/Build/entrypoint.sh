@@ -11,6 +11,7 @@
 #     Configured with the following values.  
 # 
 #       PAP_HOST: ${PAP_HOST}
+#       PAP_SECRET: ${PAP_SECRET}
 # 
 #     To set via a docker run or .yaml just set them using examples below
 #
@@ -30,6 +31,12 @@
     unzip PingDataGovernance-PAP-8.0.0.0.zip
 
     cd /opt/pap/PingDataGovernance-PAP || echo "Unable to cd to the PAP bin directory"
+
+    echo "
+######################
+Running Command: bin/setup demo --licenseKeyFile /opt/pap/PingDataGovernance-PAP/PingDataGovernance.lic --generateSelfSignedCertificate --certNickname server-cert --pkcs12KeyStorePath config/keystore.p12 --hostname ${PAP_HOST} --port 9443 --decisionPointSharedSecret ${PAP_SECRET}
+######################
+"
 
     bin/setup demo --licenseKeyFile /opt/pap/PingDataGovernance-PAP/PingDataGovernance.lic --generateSelfSignedCertificate --certNickname server-cert --pkcs12KeyStorePath config/keystore.p12 --hostname ${PAP_HOST} --port 9443 --decisionPointSharedSecret ${PAP_SECRET}
 
