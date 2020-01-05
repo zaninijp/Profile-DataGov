@@ -10,7 +10,14 @@ It is designed to be used in conjunction with:
 * Launch the stack with `docker-compose up -d`
 ---
 ## Manual Steps
-Add the Gateway Policy to PAP
+**PAP Licensing**  
+
+Inject a DG license into PAP
+* The license file does not get pulled from DevOps
+* Place a valid DG 8 license file into your local volume that's referenced in the `docker-compose.yaml` file  
+
+**Add the Gateway Policy to PAP**  
+
 Via the API  
 * `curl -k -X POST "https://{pingdatagov-pap}:9443/api/snapshot/Default%20Policies/import" -H  "accept: application/json" -H  "x-user-id: admin" -H  "Content-Type: application/json" -d "@gatewayPolicyExample.SNAPSHOT"`  
 
