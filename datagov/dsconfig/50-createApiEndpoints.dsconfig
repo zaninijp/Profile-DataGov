@@ -11,4 +11,4 @@ dsconfig create-external-server \
   --set outbound-base-path:/random_joke \
   --set "api-server:Joke API Server" \
   --set http-auth-evaluation-behavior:evaluate-and-discard \
-  --set "access-token-validator:PF Introspect"
+  --set "access-token-validator:Mock Validator"
