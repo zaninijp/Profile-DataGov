@@ -25,7 +25,7 @@ Via the API
 
 Via the PAP UI
 * Open a browser to `https://{pingdatagov-pap}:9443`
-* Import SNAPSHOT `gatewayPolicyExample.SNAPSHOT` to `Default Policies`  
+* Import SNAPSHOT (gatewayPolicyExample.SNAPSHOT) to `Default Policies`  
 
 (The PAP server in DG is pre-configured to the Decision Point ID \ Branch contained in this snapshot)  
 
