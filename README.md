@@ -8,3 +8,9 @@ It is designed to be used in conjunction with:
 * Copy the `docker-compose.yaml` and `env_vars` files to a folder
 * Modify the `env_vars` file to match your environment
 * Launch the stack with `docker-compose up -d`
+---
+## Manual Steps
+Add the Gateway Policy to PAP
+* Open a browser to (https://{pingdatagov-pap}:9443)
+* Import SNAPSHOT `gatewayPolicyExample.SNAPSHOT` to `Default Policies`
+(The PAP server in DG is pre-configured to the Decision)
