@@ -24,7 +24,7 @@ Via the API
 * `curl -k -X POST "https://{pingdatagov-pap}:9443/api/snapshot/Default%20Policies/import" -H  "accept: application/json" -H  "x-user-id: admin" -H  "Content-Type: application/json" -d "@gatewayPolicyExample.SNAPSHOT"`  
 
 Via the PAP UI
-* Open a browser to https://{pingdatagov-pap}:9443
+* Open a browser to `https://{pingdatagov-pap}:9443`
 * Import SNAPSHOT `gatewayPolicyExample.SNAPSHOT` to `Default Policies`  
 
 (The PAP server in DG is pre-configured to the Decision Point ID \ Branch contained in this snapshot)  
