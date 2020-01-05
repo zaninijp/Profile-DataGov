@@ -11,6 +11,14 @@ It is designed to be used in conjunction with:
 ---
 ## Manual Steps
 Add the Gateway Policy to PAP
+Via the API  
+* `curl -k -X POST "https://{pingdatagov-pap}:9443/api/snapshot/Default%20Policies/import" -H  "accept: application/json" -H  "x-user-id: admin" -H  "Content-Type: application/json" -d "@gatewayPolicyExample.SNAPSHOT"`  
+
+Via the UI
 * Open a browser to (https://{pingdatagov-pap}:9443)
-* Import SNAPSHOT `gatewayPolicyExample.SNAPSHOT` to `Default Policies`
-(The PAP server in DG is pre-configured to the Decision)
+* Import SNAPSHOT `gatewayPolicyExample.SNAPSHOT` to `Default Policies`  
+
+(The PAP server in DG is pre-configured to the Decision Point ID \ Branch contained in this snapshot)  
+
+Test the Joke API (Call goes through DataGov)
+* `curl -k -X GET https://{pingdatagov}:7443/jokes/random   -H 'Authorization: Bearer {"active": true}'`
