@@ -17,10 +17,11 @@ services:
     image: pingidentity/pingdatagovernance:edge
     command: wait-for pingdirectory:389 -t 300 -- entrypoint.sh start-server
     environment:    
+      # Adding the bits needed for Jokes API and PF Token Validation
       - SERVER_PROFILE_URL=https://github.com/cprice-ping/Profile-DataGov.git
       - SERVER_PROFILE_PATH=datagov
       - SERVER_PROFILE_PARENT=BASELINE
-      
+      # Using the GTE initial profile
       - SERVER_PROFILE_BASELINE_URL=https://github.com/pingidentity/pingidentity-server-profiles.git
       - SERVER_PROFILE_BASELINE_PATH=baseline/pingdatagovernance
     env_file:
