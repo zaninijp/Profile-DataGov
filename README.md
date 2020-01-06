@@ -19,16 +19,10 @@ Inject a DG license into PAP
 * Place a valid DG 8 license file into your local volume that's referenced in the `docker-compose.yaml` file  
 
 **Add the Gateway Policy to PAP**  
-[Gateway Policy Example - SNAPSHOT](gatewayPolicyExample.SNAPSHOT)
-
-Via the API  
-* `curl -k -X POST "https://{pingdatagov-pap}:9443/api/snapshot/Default%20Policies/import" -H  "accept: application/json" -H  "x-user-id: admin" -H  "Content-Type: application/json" -d "@gatewayPolicyExample.SNAPSHOT"`  
-
-Via the PAP UI
-* Open a browser to `https://{pingdatagov-pap}:9443`
-* Import [SNAPSHOT](gatewayPolicyExample.SNAPSHOT) to `Default Policies`  
-
-(The PAP server in DG is pre-configured to the Decision Point ID \ Branch contained in this snapshot)  
+There's a Postman Newman service in this stack that calls a Postman collection to inject the `gatewayPolicyExample.SNAPSHOT` contents into PAP. 
 
 Test the Joke API (Call goes through DataGov)
-* `curl -k -X GET https://{pingdatagov}:7443/jokes/random   -H 'Authorization: Bearer {"active": true}'`
+* `curl -k -X GET https://{pingdatagov}:7443/jokes/random   -H 'Authorization: Bearer {"active": true}'`  
+Should get a `status:200`  and a joke returned
+* `curl -k -X GET https://{pingdatagov}:7443/jokes/random   -H 'Authorization: Bearer {"active": true}'`  
+Should get a `status:401` and an error about an Invalid Token
