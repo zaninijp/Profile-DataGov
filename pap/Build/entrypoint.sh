@@ -36,9 +36,11 @@ Running Command: bin/setup demo --licenseKeyFile /opt/pap/PingDataGovernance-PAP
 
     bin/setup demo --licenseKeyFile /opt/pap/PingDataGovernance-PAP/PingDataGovernance.lic --generateSelfSignedCertificate --certNickname server-cert --pkcs12KeyStorePath config/keystore.p12 --hostname ${PAP_HOST} --port 9443 --decisionPointSharedSecret ${PAP_SECRET}
 
-    echo "#################################"
+    echo "
+    #################################"
     grep "Authentication.SharedSecret:" /opt/pap/PingDataGovernance-PAP/config/configuration.yml
-    echo "#################################
+    echo "
+    #################################
     "
 
     java -Xmx1G -XX:+UseG1GC -Dsymphonic.Database.H2.Path=/opt/pap/PingDataGovernance-PAP/admin-point-application/db/ -classpath /opt/pap/PingDataGovernance-PAP/admin-point-application/lib/*:/opt/pap/PingDataGovernance-PAP/admin-point-application/bin/* com.symphonicsoft.adminpoint.AdministrationPointApplication server /opt/pap/PingDataGovernance-PAP/config/configuration.yml
