@@ -71,6 +71,19 @@
       "response": []
     },
     {
+      "name": "00-Start-API-Calls Copy",
+      "_postman_id": "794026d5-d12f-4206-9f18-17221ef3f634",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "https://postman-echo.com"
+      },
+      "response": []
+    },
+    {
       "name": "Import Snapshot to Default Policies",
       "event": [
         {
