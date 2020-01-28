@@ -24,5 +24,5 @@ There's a Postman Newman service in this stack that calls a Postman collection t
 Test the Joke API (Call goes through DataGov)
 * `curl -k -X GET https://{pingdatagov}:7443/jokes/random   -H 'Authorization: Bearer {"active": true}'`  
 Should get a `status:200`  and a joke returned
-* `curl -k -X GET https://{pingdatagov}:7443/jokes/random   -H 'Authorization: Bearer {"active": true}'`  
+* `curl -k -X GET https://{pingdatagov}:7443/jokes/random   -H 'Authorization: Bearer {"active": false}'`  
 Should get a `status:401` and an error about an Invalid Token
