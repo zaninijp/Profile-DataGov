@@ -13,7 +13,7 @@ services:
     networks:
       - pingnet
 
- pap-config:
+  pap-config:
     image: postman/newman:latest
     command:
       run https://www.getpostman.com/collections/18d685d285ea7fb92886 --insecure
